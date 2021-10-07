@@ -25,7 +25,7 @@ export default function Navigation(props) {
           </Badge>
         </Grid>
         <Grid item xs={4} sx={{ display: "flex" }}>
-          <Button disabled={props.curentPage>=34?true:true} onClick={()=> props.numberPage(true)}
+          <Button disabled={props.curentPage>=34?true:false} onClick={()=> props.numberPage(true)}
             variant='contained'
             endIcon={<NavigateNextIcon />}
             sx={{ ml: "auto" }}
