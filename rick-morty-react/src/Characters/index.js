@@ -18,12 +18,9 @@ export default function Characters(props) {
 
                 < Character status={element.status} image={element.image} species={element.species}  name={element.name}  />
               </Grid>
-
               )
 
           )}
-
-
       </Grid>
     </Container>
   );

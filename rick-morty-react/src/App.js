@@ -25,13 +25,8 @@ function App() {
 
             const url=`https://rickandmortyapi.com/api/character/?page=${page}`;
 
-             await axios.get(url)
-                .then(function (response) {
-
-
-                    setrickandmort(response.data);
-
-                })
+            const response=await axios.get(url)
+             response.status===200 && setrickandmort(response.data);
         }
         fetchData()
 
