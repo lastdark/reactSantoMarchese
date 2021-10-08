@@ -14,9 +14,6 @@ function App() {
         return ( nextPage&& page<rickandmorty?.info.pages) ?  setPage(page+1):setPage(page-1)
 
 
-
-
-
     }
 
 

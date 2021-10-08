@@ -16,7 +16,7 @@ export default function Characters(props) {
           props.rickandmorty?.map((element)=>(
               <Grid key={element.id.toString()} item xs={3}>
 
-                < Character  image={element.image} species={element.species}  name={element.name}  />
+                < Character status={element.status} image={element.image} species={element.species}  name={element.name}  />
               </Grid>
 
               )

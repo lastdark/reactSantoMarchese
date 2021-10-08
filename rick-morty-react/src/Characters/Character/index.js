@@ -9,7 +9,7 @@ import { CardActionArea } from "@mui/material";
 
 export default function Character(props) {
 
-
+console.log(props.status);
   return (
     <Card  sx={{ maxWidth: 345 }}>
 
@@ -22,10 +22,13 @@ export default function Character(props) {
             />
             <CardContent>
                 <Typography gutterBottom variant='h5' component='div'>
-                    {props.species}
+                  name:  {props.name}
                 </Typography>
                 <Typography variant='body2' color='text.secondary'>
-                    {props.name}
+                    species {props.species}
+                </Typography>
+                <Typography variant='body2' color='text.secondary'>
+                    status: {props.status}
                 </Typography>
             </CardContent>
         </CardActionArea>
