@@ -4,19 +4,20 @@ import Character from "./Character";
 
 
 
-export default function Characters(props) {
+export default function Characters({rickandmorty}) {
 
-
+//fecth data
+// dentro un useEffect
 
 
   return (
     <Container fixed sx={{ mt: 4 }}>
       <Grid  container spacing={2}>
         {
-          props.rickandmorty?.map((element)=>(
-              <Grid key={element.id.toString()} item xs={3}>
+          rickandmorty?.map((element)=>(
+              <Grid key={element.id} item xs={3}>
 
-                < Character status={element.status} image={element.image} species={element.species}  name={element.name}  />
+                < Character {...element}  />
               </Grid>
               )
 

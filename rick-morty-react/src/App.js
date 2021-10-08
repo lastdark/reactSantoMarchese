@@ -10,7 +10,7 @@ function App() {
 
     function numberPage(nextPage){
 
-        console.log(nextPage);
+
         return ( nextPage&& page<rickandmorty?.info.pages) ?  setPage(page+1):setPage(page-1)
 
 

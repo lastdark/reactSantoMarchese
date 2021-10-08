@@ -5,7 +5,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import Badge from "@mui/material/Badge";
-export default function Navigation(props) {
+export default function Navigation({curentPage,numberPage}) {
 
 
 
@@ -15,17 +15,17 @@ export default function Navigation(props) {
     <Container fixed sx={{ mt: 4 }}>
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          <Button disabled={props.curentPage<=1? true:false } onClick={()=> props.numberPage(false)} variant='contained' startIcon={<NavigateBeforeIcon />}>
+          <Button disabled={curentPage<=1 } onClick={()=>  numberPage(false)} variant='contained' startIcon={<NavigateBeforeIcon />}>
             Previous
           </Button>
         </Grid>
         <Grid item xs={4} sx={{ display: "flex" }}>
-          <Badge badgeContent={props.curentPage} sx={{ mx: "auto" }} color='primary'>
+          <Badge badgeContent={curentPage} sx={{ mx: "auto" }} color='primary'>
             <InsertDriveFileIcon color='action' />
           </Badge>
         </Grid>
         <Grid item xs={4} sx={{ display: "flex" }}>
-          <Button disabled={props.curentPage>=34?true:false} onClick={()=> props.numberPage(true)}
+          <Button disabled={curentPage>=34} onClick={()=> numberPage(true)}
             variant='contained'
             endIcon={<NavigateNextIcon />}
             sx={{ ml: "auto" }}
