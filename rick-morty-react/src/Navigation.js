@@ -5,9 +5,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import Badge from "@mui/material/Badge";
-export default function Navigation({curentPage,numberPage}) {
-
-
+export default function Navigation({curentPage,setPage}) {
 
 
 
@@ -15,7 +13,7 @@ export default function Navigation({curentPage,numberPage}) {
     <Container fixed sx={{ mt: 4 }}>
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          <Button disabled={curentPage<=1 } onClick={()=>  numberPage(false)} variant='contained' startIcon={<NavigateBeforeIcon />}>
+          <Button disabled={curentPage<=1 } onClick={()=> setPage((prev)=>prev-1) } variant='contained' startIcon={<NavigateBeforeIcon />}>
             Previous
           </Button>
         </Grid>
@@ -25,7 +23,7 @@ export default function Navigation({curentPage,numberPage}) {
           </Badge>
         </Grid>
         <Grid item xs={4} sx={{ display: "flex" }}>
-          <Button disabled={curentPage>=34} onClick={()=> numberPage(true)}
+          <Button disabled={curentPage>=34} onClick={()=>setPage((prev)=>prev+1)}
             variant='contained'
             endIcon={<NavigateNextIcon />}
             sx={{ ml: "auto" }}

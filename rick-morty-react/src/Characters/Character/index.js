@@ -7,34 +7,50 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-export default function Character({name,image,status,species}) {
+import { Link } from "react-router-dom";
 
-  return (
-    <Card  sx={{ maxWidth: 345 }}>
 
-        <CardActionArea>
-            <CardMedia
-                component='img'
-                alt='green iguana'
-                height='140'
-                image={image}
-            />
-            <CardContent>
-                <Typography gutterBottom variant='h5' component='div'>
-                  name:  {name}
-                </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                    species= {species}
-                </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                    status:= {status}
-                </Typography>
-            </CardContent>
-        </CardActionArea>
-        <CardActions>
-            <Button size='small'>Learn More</Button>
-        </CardActions>
+export default function Character({id,name,image,status,species,isToggle}) {
 
-    </Card>
+  return(
+      <Card    sx={{ maxWidth: 360 }}>
+
+          <CardActionArea>
+              <CardMedia
+                  component='img'
+                  alt='green iguana'
+                  height='140'
+                  image={image}
+              />
+              <CardContent>
+                  <Typography gutterBottom variant='h5' component='div'>
+                      name:  {name}
+                  </Typography>
+                  <Typography variant='body2' color='text.secondary'>
+                      species {species}
+                  </Typography>
+                  <Typography variant='body2' color='text.secondary'>
+                      status: {status}
+                  </Typography>
+              </CardContent>
+          </CardActionArea>
+          <CardActions>{
+
+              (isToggle) &&<Link to={`single-character/${id}`} >
+                  <Button key={id} size='small'>Learn More
+
+
+
+                  </Button>
+              </Link>
+          }
+
+            
+          </CardActions>
+
+      </Card>
   );
+
+
+
 }
